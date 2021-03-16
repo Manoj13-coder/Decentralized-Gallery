@@ -1,0 +1,9 @@
+/* Styles go here */
+@import url("https://fonts.googleapis.com/css2?family=News+Cycle&display=swap");
+body{
+    font-family: 'News Cycle', sans-serif;
+}
+#spinner{
+	margin-top: 20%;
+	margin-left: 48%;
+}
