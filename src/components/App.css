@@ -1,9 +1,17 @@
 /* Styles go here */
 @import url("https://fonts.googleapis.com/css2?family=News+Cycle&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 body{
     font-family: 'News Cycle', sans-serif;
+}
+#foot2{
+	display: none;
 }
 #spinner{
 	margin-top: 20%;
 	margin-left: 48%;
+}
+#cards{
+	border: 1px solid black;
 }
