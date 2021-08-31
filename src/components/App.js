@@ -21,7 +21,7 @@ class App extends Component{
       access : null,
       count : 0,
       posts : [],
-      photo: '',
+      photo: null,
       changes : false
     };
   }
@@ -76,10 +76,10 @@ class App extends Component{
     }
     onSum = (event) =>{
       this.setState({loading : true})
-      this.setState({upload : "black"})
       event.preventDefault();
       ipfs.files.add(this.state.buffer , (error , result) =>{
-        if(error || this.state.photo === ''){
+        if(error || this.state.photo === null){
+            console.log(error,this.state.photo);
             window.alert("Insufficient Data !!")
             this.setState({loading: false})
             return
@@ -94,7 +94,9 @@ class App extends Component{
     }
     Name = (event) =>{
       event.preventDefault();
+      console.log(event.target.value);
       this.setState({photo : event.target.value})
+      console.log(this.state.photo);
     }
     Ref = (event) =>{
       event.preventDefault();
@@ -115,6 +117,7 @@ class App extends Component{
                 posts = {this.state.posts}
                 col = {this.state.col}
                 onSum = {this.onSum}
+                Name = {this.Name}
                 captureFile = {this.captureFile}
                 Ref = {this.Ref}
               />);

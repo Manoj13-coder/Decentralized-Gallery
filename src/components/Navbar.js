@@ -15,7 +15,7 @@ class Navbar extends Component{
 
 					  <div className="collapse navbar-collapse" id="navbarSupportedContent">
 		                  <div className="nav-item">
-	 						  <a href="#" className="nav-link text-light ml-2" onClick={this.props.Upload} data-toggle="modal" data-target="#myModal">Upload</a>
+	 						  <a href="#" className="nav-link text-light ml-2" data-toggle="modal" data-target="#myModal">Upload</a>
 		                   </div>
 		                   <div className="nav-item">
 	 						  <a href="#" className="nav-link text-light ml-2" onClick={this.props.Ref}>Save Changes</a>
@@ -31,7 +31,7 @@ class Navbar extends Component{
                     <div className="modal-dialog">
                       <div className="modal-content">
                         <div>
-                          <button type="button" className="close mr-3 mt-3" data-dismiss="modal" onClick={this.props.ChC}>&times;</button>
+                          <button type="button" className="close mr-3 mt-3" data-dismiss="modal">&times;</button>
                         </div>
                         <div className="modal-body text-center">
                           <form className="form">
