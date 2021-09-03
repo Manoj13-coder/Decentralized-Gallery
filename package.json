@@ -1,8 +1,8 @@
 {
-  "name": "eth-marketplace",
+  "name": "eth-gallery",
   "version": "0.1.0",
-  "description": "An Ethereum Marketplace",
-  "author": "gregory@dappuniversity.com",
+  "description": "An Ethereum Gallery",
+  "author": "manojkumar.cse19@chitkarauniversity.edu.in",
   "dependencies": {
     "babel-polyfill": "6.26.0",
     "babel-preset-env": "1.7.0",
@@ -28,7 +28,6 @@
     "truffle": "5.0.5",
     "web3": "1.0.0-beta.55"
   },
-  "homepage": "http://dappuniversity.github.io/social-network",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
