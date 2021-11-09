@@ -13,7 +13,7 @@ contract Gallery{
 		string name,
 		address author
 	);
-	mapping(uint => Pic) public photos;
+	mapping(uint => mapping(address => Pic)) public photos;
 	uint public count=0;
 	function increment() internal{
 		count++;
@@ -21,7 +21,7 @@ contract Gallery{
 	function Add(string memory Name,string memory Hash) public{
 		require(bytes(Name).length > 0);
 		increment();
-		photos[count] = Pic(count,Hash,Name,msg.sender);
+		photos[count][msg.sender] = Pic(count,Hash,Name,msg.sender);
 		emit Details(count,Hash,Name,msg.sender);
 	}
 }

@@ -55,10 +55,12 @@ class App extends Component{
         this.setState({count : count})
         this.setState({loading : false})
         for (var i = 1; i <= count; i++) {
-          const post = await access.methods.photos(i).call()
-          this.setState({
-            posts: [...this.state.posts, post]
-          })
+          const post = await access.methods.photos(i,this.state.account).call();
+          if(post.Hash){
+            this.setState({
+              posts: [...this.state.posts, post]
+            })
+          }
         }
       }else{
         window.alert("You are not on Ganache!!")
@@ -71,7 +73,6 @@ class App extends Component{
       reader.readAsArrayBuffer(file)
       reader.onloadend = () =>{
         this.setState({buffer : Buffer(reader.result)})
-        console.log(this.state.buffer)
       }
     }
     onSum = (event) =>{
@@ -79,24 +80,19 @@ class App extends Component{
       event.preventDefault();
       ipfs.files.add(this.state.buffer , (error , result) =>{
         if(error || this.state.photo === null){
-            console.log(error,this.state.photo);
             window.alert("Insufficient Data !!")
             this.setState({loading: false})
-            return
+            return;
         }
         this.setState({ipfsHash : result[0].hash})
-        console.log(this.state.ipfsHash)
-        this.state.access.methods.Add(this.state.photo,this.state.ipfsHash).send({from : this.state.account}).once('receipt',(receipt) =>{
-        })
+        this.state.access.methods.Add(this.state.photo,this.state.ipfsHash).send({from : this.state.account}).once('receipt',(receipt) =>{});
         this.setState({loading : false})
         this.setState({changes : true})
       })
     }
     Name = (event) =>{
       event.preventDefault();
-      console.log(event.target.value);
       this.setState({photo : event.target.value})
-      console.log(this.state.photo);
     }
     Ref = (event) =>{
       event.preventDefault();

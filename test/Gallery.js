@@ -36,7 +36,7 @@ contract("Gallery",([deployer,author]) =>{
       		assert.equal(event.author, author, 'author is correct')
 		})
 		it('lists posts', async () => {
-      		const post = await gallery.photos(count)
+      		const post = await gallery.photos(count,author)
       		const event = result.logs[0].args
       		assert.equal(post.id.toNumber(), count, 'id is correct')
       		assert.equal(event.Hash, 'QmTwPbfmZu8iiZS3GM4Ys4ioXfgqim4AjEGkt7NVvL9FAQ', 'Hash is correct')

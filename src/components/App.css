@@ -5,13 +5,9 @@
 body{
     font-family: 'News Cycle', sans-serif;
 }
-#foot2{
-	display: none;
-}
 #spinner{
 	margin-top: 20%;
 	margin-left: 48%;
-}
-#cards{
-	border: 1px solid black;
+}div{
+	overflow-wrap: break-word;
 }
